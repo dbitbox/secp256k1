@@ -4,9 +4,10 @@
  * file COPYING or http://www.opensource.org/licenses/mit-license.php.*
  **********************************************************************/
 
+#include "libsecp256k1-config.h" // for ECMULT_GEN_PREC_BITS
 #define USE_BASIC_CONFIG 1
-
 #include "basic-config.h"
+
 #include "include/secp256k1.h"
 #include "util.h"
 #include "field_impl.h"
