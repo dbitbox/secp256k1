@@ -10,8 +10,8 @@
 #include "scalar.h"
 #include "group.h"
 
-#ifndef ECMULT_GEN_PREC_BITS
-#define ECMULT_GEN_PREC_BITS 4/* 4 bits: 64kB table, fastest; 2 bits: 32kB table, ~75% speed */
+#if ECMULT_GEN_PREC_BITS != 2 && ECMULT_GEN_PREC_BITS != 4 && ECMULT_GEN_PREC_BITS != 8
+#  error "Set ECMULT_GEN_PREC_BITS to 2, 4 or 8."
 #endif
 #define ECMULT_GEN_PREC_B ECMULT_GEN_PREC_BITS
 #define ECMULT_GEN_PREC_G (1 << ECMULT_GEN_PREC_B)

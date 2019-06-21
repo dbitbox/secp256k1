@@ -155,7 +155,7 @@ CPPFLAGS_FOR_BUILD +=-I$(top_srcdir)
 
 gen_context_OBJECTS = gen_context.o
 gen_context_BIN = gen_context$(BUILD_EXEEXT)
-gen_%.o: src/gen_%.c
+gen_%.o: src/gen_%.c src/libsecp256k1-config.h
 	$(CC_FOR_BUILD) $(CPPFLAGS_FOR_BUILD) $(CFLAGS_FOR_BUILD) -c $< -o $@
 
 $(gen_context_BIN): $(gen_context_OBJECTS)
@@ -172,7 +172,7 @@ src/ecmult_static_context.h: $(gen_context_BIN)
 CLEANFILES = $(gen_context_BIN) src/ecmult_static_context.h $(JAVAROOT)/$(JAVAORG)/*.class .stamp-java
 endif
 
-EXTRA_DIST = autogen.sh src/gen_context.c src/basic-config.h $(JAVA_FILES)
+EXTRA_DIST = autogen.sh src/gen_context.c src/libsecp256k1-config.h src/basic-config.h $(JAVA_FILES)
 
 if ENABLE_MODULE_ECDH
 include src/modules/ecdh/Makefile.am.include
