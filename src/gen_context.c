@@ -46,6 +46,9 @@ int main(int argc, char **argv) {
     fprintf(fp, "#define _SECP256K1_ECMULT_STATIC_CONTEXT_\n");
     fprintf(fp, "#include \"src/group.h\"\n");
     fprintf(fp, "#define SC SECP256K1_GE_STORAGE_CONST\n");
+    fprintf(fp, "#if ECMULT_GEN_PREC_N != %d || ECMULT_GEN_PREC_G != %d\n", ECMULT_GEN_PREC_N, ECMULT_GEN_PREC_G);
+    fprintf(fp, "   #error configuration mismatch, invalid ECMULT_GEN_PREC_N, ECMULT_GEN_PREC_G\n");
+    fprintf(fp, "#endif\n");
     fprintf(fp, "static const secp256k1_ge_storage secp256k1_ecmult_static_context[ECMULT_GEN_PREC_N][ECMULT_GEN_PREC_G] = {\n");
 
     base = checked_malloc(&default_error_callback, SECP256K1_ECMULT_GEN_CONTEXT_PREALLOCATED_SIZE);
