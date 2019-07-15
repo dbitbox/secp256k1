@@ -67,4 +67,4 @@ Exhaustive tests
 
 With valgrind, you might need to increase the max stack size:
 
-    $ valgrind --max-stackframe=2097912 ./exhaustive_tests
+    $ valgrind --max-stackframe=2500000 ./exhaustive_tests

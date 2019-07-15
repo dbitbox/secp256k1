@@ -168,7 +168,7 @@ AC_ARG_WITH([ecmult-window], [AS_HELP_STRING([--with-ecmult-window=SIZE|auto],
 AC_ARG_WITH([ecmult-gen-precision], [AS_HELP_STRING([--with-ecmult-gen-precision=2|4|8|auto],
 [Precision bits to tune the precomputed table size for signing.]
 [The size of the table is 32kB for 2 bits, 64kB for 4 bits, 512kB for 8 bits of precision.]
-[A smaller table size usually results in slower signing.]
+[A larger table size usually results in possible faster signing.]
 ["auto" is a reasonable setting for desktop machines (currently 4). [default=auto]]
 )],
 [req_ecmult_gen_precision=$withval], [req_ecmult_gen_precision=auto])
