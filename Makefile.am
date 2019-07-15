@@ -172,7 +172,7 @@ src/ecmult_static_context.h: $(gen_context_BIN)
 CLEANFILES = $(gen_context_BIN) src/ecmult_static_context.h $(JAVAROOT)/$(JAVAORG)/*.class .stamp-java
 endif
 
-EXTRA_DIST = autogen.sh src/gen_context.c src/libsecp256k1-config.h src/basic-config.h $(JAVA_FILES)
+EXTRA_DIST = autogen.sh src/gen_context.c src/basic-config.h $(JAVA_FILES)
 
 if ENABLE_MODULE_ECDH
 include src/modules/ecdh/Makefile.am.include
